@@ -6,7 +6,7 @@ describe('pizzaOrder', function() {
     expect(Pizza.topping).to.equal("ham");
   });
 
-  it('calculates total value of pizza based on size, toppings, and number', function() {
+  it('calculate total cost of pizza off size toppings and number', function() {
     var Pizza = new pizzaOrder("Huge", 1, "pineapple");
 
     expect(Pizza.totalCost()).to.equal(8.25);
