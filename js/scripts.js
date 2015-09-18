@@ -20,3 +20,39 @@ pizzaOrder.prototype.totalCost = function() {
   var totalCost = toppingCost + (costOfSize * (parseInt(this.number)));
   return totalCost;
 };
+
+$(document).ready(function() {
+  $("form#customerOrder").submit(function(event) {
+    var costForAll = 0;
+    event.preventDefault();
+$(".pizzaCreation").each(function() {
+    var pizzaTopping = $("input#topping").val().toString();
+    var size = $("select#size").val();
+    var number = $("input#numberOfPizzas").val();
+    var pizza = new pizzaOrder(size,number,pizzaTopping);
+    $("#pizzaTotal").show();
+    $("#totalCost").text(number + ' ' + size + ' ' + "pizzas with " + pizzaTopping + " " + "will cost $" + pizza.totalCost());
+    costForAll += pizza.totalCost();
+  });
+
+    $("#costForAllPizza").text("total cost for all pizza's will be $" + costForAll);
+    $("select#size").val("Select Size");
+    $("input#topping").val("");
+    $("input#numberOfPizzas").val("");
+
+  });
+
+  $("#addNewPizza").click(function(){
+    $("#pizzaForms").append("<div class='pizzaCreation'><label for='pizzaSize'>Pizza Size: </label>" + "<select id='size'>" +
+    "<option>Select Size</option>" +
+    "<option value='Huge'>Large</option>" +
+    "<option value='Kinda Big'>Medium</option>" +
+    "<option value='Pretty small'>Pretty small</option>" +
+    "</select>" +
+    "<label for='topping'>Toppings</label>" +
+    "<input type='text' id='topping'>" +
+    "<label for='numberOfPizzas'>Number of Pizza's:</label>" +
+    "<input type='text' id='numberOfPizzas'> </div>");
+
+  });
+});

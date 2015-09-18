@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pizza Palace</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css" media="screen" title="no title" charset="utf-8">
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="js/scripts.js"></script>
+</head>
+<body>
+      <h1>Order a Pie..Now featuring cheese!</h1>
+      <form id="customerOrder">
+        <div id="pizzaForms">
+          <div class="pizzaCreation">
+            <label for="pizzaSize">Pie Size: </label>
+            <select id="size">
+              
+              <div>
+              <option>Select Size of Pie</option>
+              <option value="Huge">Huge</option>
+              <option value="Kinda Big">Kinda Big</option>
+              <option value="Pretty small">Pretty small</option>
+            </select>
+          </div>
 
+          <div>
+            <label for="topping">Toppings</label>
+            <input type="text" id="topping" >
+          </div>
+          <div>
+            <label for="numberOfPizzas">Number of Pie's:</label>
+            <input type="text" id="numberOfPizzas">
+          </div>
+
+          </div>
+
+      </div>
+
+        <button name="submit" class="btn btn-large btn-warning">Order</button>
+      </form>
+      <button id="addNewPizza" class="btn btn-large btn-danger">Add Another Pizza yo</button>
+
+      <div id="pizzaTotal">
+        <h2>Total Cost:</h2>
+        <h3 id="costForAllPizza"></h3>
+        <h5 id="totalCost"></h5>
+      </div>
+
+
+
+</body>
+</html>
